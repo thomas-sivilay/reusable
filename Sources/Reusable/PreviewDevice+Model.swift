@@ -30,4 +30,27 @@ public extension PreviewDevice {
     init(model: PreviewDevice.Model) {
         self.init(rawValue: model.rawValue)
     }
+    
+    static let iPhone7 = PreviewDevice(model: .iPhone7)
+    static let iPhone7Plus = PreviewDevice(model: .iPhone7Plus)
+    static let iPhone8 = PreviewDevice(model: .iPhone8)
+    static let iPhone8Plus = PreviewDevice(model: .iPhone8Plus)
+    static let iPhoneSE = PreviewDevice(model: .iPhoneSE)
+    static let iPhoneX = PreviewDevice(model: .iPhoneX)
+    static let iPhoneXs = PreviewDevice(model: .iPhoneXs)
+    static let iPhoneXsMax = PreviewDevice(model: .iPhoneXsMax)
+    static let iPhoneXr = PreviewDevice(model: .iPhoneXr)
+    
+    static let iPadMini4 = PreviewDevice(model: .iPadMini4)
+    static let iPadAir2 = PreviewDevice(model: .iPadAir2)
+    static let iPadPro_9_7inch = PreviewDevice(model: .iPadPro_9_7inch)
+    static let iPadPro_12_9inch = PreviewDevice(model: .iPadPro_12_9inch)
+    static let iPad5 = PreviewDevice(model: .iPad5)
+    static let iPadPro_12_9inch2 = PreviewDevice(model: .iPadPro_12_9inch2)
+    static let iPadPro_10_5inch = PreviewDevice(model: .iPadPro_10_5inch)
+    static let iPad6 = PreviewDevice(model: .iPad6)
+    static let iPadPro_11inch = PreviewDevice(model: .iPadPro_11inch)
+    static let iPadPro_12_9inch3 = PreviewDevice(model: .iPadPro_12_9inch3)
+    static let iPadMini5 = PreviewDevice(model: .iPadMini5)
+    static let iPadAir3 = PreviewDevice(model: .iPadAir3)
 }
