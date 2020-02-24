@@ -1,11 +1,11 @@
 import Combine
 import SwiftUI
 
-struct KeyboardHandler: ViewModifier {
+public struct KeyboardHandler: ViewModifier {
     
     @State var currentHeight: CGFloat = 0
     
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         content
             .padding(.bottom, self.currentHeight)
             .edgesIgnoringSafeArea(self.currentHeight == 0 ? Edge.Set() : .bottom)
@@ -29,7 +29,7 @@ struct KeyboardHandler: ViewModifier {
 }
 
 extension View {
-    func withKeyboardHandler() -> some View {
+    public func withKeyboardHandler() -> some View {
         self.modifier(KeyboardHandler())
     }
 }

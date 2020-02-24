@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ViewStateView<Content: View, EmptyView: View, ErrorView: View, E: Error, T>: View {
+public struct ViewStateView<Content: View, EmptyView: View, ErrorView: View, E: Error, T>: View {
     
     @State var isAnimating: Bool = true
     let content: (T) -> Content
@@ -18,7 +18,7 @@ struct ViewStateView<Content: View, EmptyView: View, ErrorView: View, E: Error, 
         self.emptyView = emptyView
     }
     
-    var body: some View {
+    public var body: some View {
         switch viewState {
         case .loaded(let result):
             return content(result)
