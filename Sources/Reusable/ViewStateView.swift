@@ -23,8 +23,11 @@ public struct ViewStateView<Content: View, EmptyView: View, ErrorView: View, E: 
         case .loaded(let result):
             return content(result)
                 .eraseToAnyView()
-        case .loading:
-            return ActivityIndicator(isAnimating: $isAnimating, style: .large).eraseToAnyView()
+        case .loading(let message):
+            return VStack {
+                ActivityIndicator(isAnimating: $isAnimating, style: .large)
+                Text(message)
+            }.eraseToAnyView()
         case .error(let error):
             return errorView(error)
                 .eraseToAnyView()

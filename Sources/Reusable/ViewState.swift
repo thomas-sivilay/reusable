@@ -1,7 +1,7 @@
 import Foundation
 
 public enum ViewState<T, E: Error> {
-    case loading
+    case loading(String)
     case loaded(T)
     case empty
     case error(E)
