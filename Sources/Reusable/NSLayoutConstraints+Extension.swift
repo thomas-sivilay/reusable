@@ -40,4 +40,36 @@ extension UIView {
             ])
         }
     }
+    
+    public func addConstrainedSubview(_ view: UIView,
+                                      horizontalGuide horizontalLayoutGuide: LayoutGuide = .none,
+                                      verticalGuide verticalLayoutGuide: LayoutGuide = .none,
+                                      insets edgeInsets: UIEdgeInsets = .zero) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        
+        if let layoutGuide = horizontalLayoutGuide.layoutGuide(for: self) {
+            NSLayoutConstraint.activate([
+                view.leftAnchor.constraint(equalTo: layoutGuide.leftAnchor, constant: edgeInsets.left),
+                view.rightAnchor.constraint(equalTo: layoutGuide.rightAnchor, constant: -edgeInsets.right),
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                view.leftAnchor.constraint(equalTo: leftAnchor, constant: edgeInsets.left),
+                view.rightAnchor.constraint(equalTo: rightAnchor, constant: -edgeInsets.right),
+            ])
+        }
+        
+        if let layoutGuide = verticalLayoutGuide.layoutGuide(for: self) {
+            NSLayoutConstraint.activate([
+                view.topAnchor.constraint(equalTo: layoutGuide.topAnchor, constant: edgeInsets.top),
+                view.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: -edgeInsets.bottom),
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                view.topAnchor.constraint(equalTo: topAnchor, constant: edgeInsets.top),
+                view.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -edgeInsets.bottom),
+            ])
+        }
+    }
 }
