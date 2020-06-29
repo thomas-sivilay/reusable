@@ -1,7 +1,7 @@
 import SwiftUI
 
 public struct ActivityIndicator: UIViewRepresentable {
-
+    
     @Binding public var isAnimating: Bool
     public let style: UIActivityIndicatorView.Style
     
