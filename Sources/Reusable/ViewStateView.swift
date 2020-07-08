@@ -18,22 +18,19 @@ public struct ViewStateView<Content: View, EmptyView: View, ErrorView: View, E: 
         self.emptyView = emptyView
     }
     
-    public var body: some View {
+    @ViewBuilder public var body: some View {
         switch viewState {
         case .loaded(let result):
-            return content(result)
-                .eraseToAnyView()
+            content(result)
         case .loading(let message):
-            return VStack {
+            VStack {
                 ActivityIndicator(isAnimating: $isAnimating, style: .large)
                 Text(message)
-            }.eraseToAnyView()
+            }
         case .error(let error):
-            return errorView(error)
-                .eraseToAnyView()
+            errorView(error)
         case .empty:
-            return emptyView()
-                .eraseToAnyView()
+            emptyView()
         }
     }
 }

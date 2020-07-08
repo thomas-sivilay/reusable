@@ -1,7 +1,7 @@
 import SwiftUI
 
 extension View {
-    public func eraseToAnyView() -> AnyView {
+    public func eraseToAnyView() -> some View {
         AnyView(self)
     }
 }
