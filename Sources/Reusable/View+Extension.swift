@@ -7,6 +7,18 @@ extension View {
 }
 
 extension View {
+    @ViewBuilder public func embeddedInScrollView(when condition: Bool) -> some View {
+        if condition {
+            ScrollView {
+                self
+            }
+        } else {
+            self
+        }
+    }
+}
+
+extension View {
     public func fillParentWidth(alignment: Alignment = .center) -> some View {
         return GeometryReader { geometry in
             self.frame(width: geometry.size.width, height: nil, alignment: alignment)
@@ -18,6 +30,12 @@ extension View {
 extension View {
     public func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    
+    public func endEditing(_ force: Bool) {
+        UIApplication.shared.windows.forEach {
+            $0.endEditing(force)
+        }
     }
 }
 #endif
