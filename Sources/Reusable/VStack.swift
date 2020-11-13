@@ -13,10 +13,14 @@ public struct LVStack<Content>: View where Content : View {
     }
     
     @ViewBuilder public var body: some View {
+        #if targetEnvironment(macCatalyst)
+        VStack(alignment: alignment, spacing: spacing, content: self.content)
+        #else
         if #available(iOS 14.0, *) {
             LazyVStack(alignment: alignment, spacing: spacing, content: self.content)
         } else {
             VStack(alignment: alignment, spacing: spacing, content: self.content)
         }
+        #endif
     }
 }

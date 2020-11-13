@@ -7,11 +7,21 @@ extension View {
 }
 
 extension View {
-    @ViewBuilder public func embeddedInScrollView(when condition: Bool) -> some View {
+    @ViewBuilder
+    public func embeddedInScrollView(when condition: Bool) -> some View {
         if condition {
             ScrollView {
                 self
             }
+        } else {
+            self
+        }
+    }
+    
+    @ViewBuilder
+    public func overlayIf<Overlay: View>(_ condition: Bool, content: @escaping () -> Overlay) -> some View {
+        if condition {
+            self.overlay(content())
         } else {
             self
         }
