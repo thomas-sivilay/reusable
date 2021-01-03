@@ -8,7 +8,7 @@ public extension PreviewDevice {
         case iPhone7Plus = "iPhone 7 Plus"
         case iPhone8 = "iPhone 8"
         case iPhone8Plus = "iPhone 8 Plus"
-        case iPhoneSE = "iPhone SE"
+        case iPhoneSE = "iPhone SE (1st generation)"
         case iPhoneX = "iPhone X"
         case iPhoneXs = "iPhone Xs"
         case iPhoneXsMax = "iPhone Xs Max"
@@ -25,6 +25,7 @@ public extension PreviewDevice {
         case iPadPro_12_9inch3 = "iPad Pro (12.9-inch) (3rd generation)"
         case iPadMini5 = "iPad mini (5th generation)"
         case iPadAir3 = "iPad Air (3rd generation)"
+        case iPhone12Mini = "iPhone 12 mini"
     }
     
     init(model: PreviewDevice.Model) {
@@ -36,6 +37,7 @@ public extension PreviewDevice {
     static let iPhone8 = PreviewDevice(model: .iPhone8)
     static let iPhone8Plus = PreviewDevice(model: .iPhone8Plus)
     static let iPhoneSE = PreviewDevice(model: .iPhoneSE)
+    static let iPhone12Mini = PreviewDevice(model: .iPhone12Mini)
     static let iPhoneX = PreviewDevice(model: .iPhoneX)
     static let iPhoneXs = PreviewDevice(model: .iPhoneXs)
     static let iPhoneXsMax = PreviewDevice(model: .iPhoneXsMax)

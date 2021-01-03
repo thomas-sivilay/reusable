@@ -20,10 +20,11 @@ extension View {
     
     @ViewBuilder
     public func overlayIf<Overlay: View>(_ condition: Bool, content: @escaping () -> Overlay) -> some View {
-        if condition {
-            self.overlay(content())
-        } else {
+        ZStack {
             self
+            if condition {
+                content()
+            }
         }
     }
 }
