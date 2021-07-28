@@ -38,6 +38,7 @@ extension View {
 }
 
 #if canImport(UIKit)
+@available(iOSApplicationExtension, unavailable)
 extension View {
     public func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
